@@ -1,11 +1,11 @@
 package view;
 
-import controller.InterfaceCtrl;
+import controller.LoginCtrl;
 
 public class Aplicacao {
     public static void main(String[] args) {
         
-    InterfaceCtrl telaLogin = new InterfaceCtrl();
+    LoginCtrl telaLogin = new LoginCtrl();
 
         telaLogin.fazerLogin();
 

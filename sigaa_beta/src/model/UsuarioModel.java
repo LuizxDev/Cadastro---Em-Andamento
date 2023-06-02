@@ -1,6 +1,6 @@
 package model;
 
-public class CadastroModel {
+public class UsuarioModel {
     private String login_usuario;
     private String senha_usuario;
 

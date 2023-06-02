@@ -7,7 +7,7 @@ public class Aplicacao {
         
     InterfaceCtrl telaLogin = new InterfaceCtrl();
 
-        telaLogin.inicializarTela();
+        telaLogin.fazerLogin();
 
 
     }

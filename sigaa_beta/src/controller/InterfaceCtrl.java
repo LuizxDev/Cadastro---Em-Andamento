@@ -1,13 +1,17 @@
 package controller;
 
-import model.LoginInterface;
+import javax.swing.JOptionPane;
 
-public class InterfaceCtrl extends LoginInterface {
+import model.CadastroModel;
 
-    //InterfaceModel tela = new InterfaceModel();
+public class InterfaceCtrl{
 
-    public void inicializarTela(){
-        this.setVisible(true);
+    public void fazerLogin() {
+        CadastroModel info = new CadastroModel();
+
+        info.setLogin_usuario(JOptionPane.showInputDialog(null, "Digite o seu login"));
+
+        info.setSenha_usuario(JOptionPane.showInputDialog(null, "Digite sua Senha"));
     }
-    
+
 }

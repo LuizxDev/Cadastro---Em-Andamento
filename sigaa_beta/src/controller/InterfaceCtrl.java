@@ -1,13 +1,13 @@
 package controller;
 
-import model.InterfaceModel;
+import model.LoginInterface;
 
-public class InterfaceCtrl {
+public class InterfaceCtrl extends LoginInterface {
 
-    InterfaceModel tela = new InterfaceModel();
+    //InterfaceModel tela = new InterfaceModel();
 
     public void inicializarTela(){
-        tela.setVisible(true);
+        this.setVisible(true);
     }
     
 }

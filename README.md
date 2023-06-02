@@ -4,7 +4,7 @@ Este é um exemplo de código Java para um sistema de autenticação de usuário
 
 ## Descrição
 
-O sistema permite que os usuários façam login fornecendo um login e senha. As informações são verificadas no banco de dados para autenticação. Se as credenciais forem válidas, o usuário é autenticado com sucesso.
+O sistema oferece aos usuários a opção de se cadastrar ou fazer login. Ao se cadastrar, eles podem fornecer um nome de usuário e senha, que serão armazenados em um banco de dados. Ao fazer login, as credenciais são verificadas no banco de dados para autenticação. Se as informações fornecidas forem válidas, o usuário é autenticado com sucesso.
 
 O código apresenta um exemplo de integração com banco de dados MySQL, utilizando a API JDBC para realizar consultas e atualizações.
 

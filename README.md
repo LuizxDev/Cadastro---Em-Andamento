@@ -20,7 +20,8 @@ O código apresenta um exemplo de integração com banco de dados MySQL, utiliza
 2. Crie um novo banco de dados no MySQL:
 
    ```sql
-   CREATE DATABASE nome_do_banco_de_dados; ```
+   CREATE DATABASE nome_do_banco_de_dados;
+   ```
 
 3. Crie a `tabela` info no banco de dados, com as colunas `nomeUsuario` e `senhaUsuario`:
 
@@ -31,8 +32,8 @@ O código apresenta um exemplo de integração com banco de dados MySQL, utiliza
         id INT PRIMARY KEY AUTO_INCREMENT,
         nomeUsuario VARCHAR(50) NOT NULL,
         senhaUsuario VARCHAR(50) NOT NULL
-    ); ```
-
+    ); 
+    ```
 4. Configure as informações de conexão ao banco de dados no arquivo `ConexaoBd.java`, substituindo os valores das variáveis `url`, `user` e `password` de acordo com a sua configuração do MySQL.
 
 ## Executando o Sistema

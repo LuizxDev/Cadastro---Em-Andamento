@@ -7,23 +7,11 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 import model.ConexaoBd;
-import model.UsuarioModel;
 
 public class LoginCtrl {
 
-    UsuarioModel info = new UsuarioModel();
-
-    public void fazerLogin() throws Exception {
-
-        info.setLogin_usuario(JOptionPane.showInputDialog(null, "Digite o seu login"));
-
-        info.setSenha_usuario(JOptionPane.showInputDialog(null, "Digite sua Senha"));
-
-        save(info);
-    }
-
-    public void save(UsuarioModel usuario) throws Exception {
-        String sql = "insert into info(nomeUsuario, senhaUsuario)values (?, ?)";
+    public void cadastrar(String login, String senha) throws Exception {
+        String sql = "insert into info (nomeUsuario, senhaUsuario)values (?, ?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -32,8 +20,8 @@ public class LoginCtrl {
             conn = ConexaoBd.criarConexaoBd();
             pstm = conn.prepareStatement(sql);
 
-            pstm.setString(1, info.getLogin_usuario());
-            pstm.setString(2, info.getSenha_usuario());
+            pstm.setString(1, login);
+            pstm.setString(2, senha);
 
             pstm.execute();
 
@@ -52,7 +40,7 @@ public class LoginCtrl {
 
     }
 
-    public ResultSet autenticacaoUsuario(UsuarioModel usuario) throws Exception {
+    public ResultSet autenticacaoUsuario(String login, String senha) throws Exception {
 
         String sql = ("select * from info where nomeUsuario = ? and senhaUsuario = ?");
 
@@ -65,8 +53,8 @@ public class LoginCtrl {
             conn = ConexaoBd.criarConexaoBd();
             // preparando a conexao para executar a query
             pstm = conn.prepareStatement(sql);
-            pstm.setString(1, usuario.getLogin_usuario());
-            pstm.setString(2, usuario.getSenha_usuario());
+            pstm.setString(1, login);
+            pstm.setString(2, senha);
 
             // execultando a query e retornando ese valor pra variavel rs
             rs = pstm.executeQuery();
@@ -85,15 +73,16 @@ public class LoginCtrl {
             if (rs != null) {
                 rs.close();
             }
-            if (pstm != null){
+            if (pstm != null) {
                 pstm.close();
             }
-            if(conn != null){
+            if (conn != null) {
                 conn.close();
             }
-                
+
         }
 
         return rs;
     }
+
 }

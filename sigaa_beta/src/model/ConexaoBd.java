@@ -8,7 +8,7 @@ public class ConexaoBd {
 
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/agenda";
+    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/cadastro";
 
     public static Connection criarConexaoBd() throws ClassNotFoundException, SQLException {
 

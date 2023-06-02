@@ -2,7 +2,7 @@ package controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
 
 import javax.swing.JOptionPane;
 
@@ -13,11 +13,13 @@ public class LoginCtrl{
 
     UsuarioModel info = new UsuarioModel();
 
-    public void fazerLogin() {
+    public void fazerLogin() throws Exception {
 
         info.setLogin_usuario(JOptionPane.showInputDialog(null, "Digite o seu login"));
 
         info.setSenha_usuario(JOptionPane.showInputDialog(null, "Digite sua Senha"));
+
+        save(info);
     }
 
     public void save(UsuarioModel usuario) throws Exception{
@@ -33,7 +35,7 @@ public class LoginCtrl{
             pstm.setString(1, info.getLogin_usuario());
             pstm.setString(2, info.getSenha_usuario());
 
-            pstm.executeQuery();
+            pstm.execute();
 
         } catch (Exception erro) {
             // Lidar com a exceção

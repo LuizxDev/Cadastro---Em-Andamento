@@ -86,15 +86,14 @@ public class LoginCtrl {
         return rs;
     }
 
-
-    public void excluirCadastro(int id) throws Exception{
+    public void excluirCadastro(int id) throws Exception {
 
         String sql = "delete from info where id = ?";
 
         Connection conn = null;
         PreparedStatement pstm = null;
 
-        try{
+        try {
             conn = ConexaoBd.criarConexaoBd();
             pstm = conn.prepareStatement(sql);
 
@@ -104,17 +103,18 @@ public class LoginCtrl {
 
             JOptionPane.showMessageDialog(null, "Seu login foi excluido!");
 
-        }catch(SQLException erro){
+        } catch (SQLException erro) {
             System.out.println("Erro na classe loginCtrl");
-        }finally{
-            if(pstm != null){
+        } finally {
+            if (pstm != null) {
                 pstm.close();
             }
-            if(conn != null){
+            if (conn != null) {
                 conn.close();
             }
 
         }
 
     }
+
 }

@@ -13,7 +13,9 @@ public class Aplicacao {
 
         String senha;
 
-        String[] opcoes = { "1. Cadastro", "2. Login" };
+        int id;
+
+        String[] opcoes = { "1. Cadastro", "2. Login", "3. Excluir Cadastro"};
 
         int escolha = JOptionPane.showOptionDialog(null, "Selecione uma opção:",
                 "Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
@@ -35,6 +37,11 @@ public class Aplicacao {
                 login = JOptionPane.showInputDialog(null, "Digite seu login:", "Login", JOptionPane.PLAIN_MESSAGE);
                 senha = JOptionPane.showInputDialog(null, "Digite sua senha:", "Senha", JOptionPane.PLAIN_MESSAGE);
                 crtl.autenticacaoUsuario(login, senha);
+                break;
+                case 2:
+                    id = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite seu ID:", "Login", JOptionPane.PLAIN_MESSAGE));
+                    crtl.excluirCadastro(id);
+                    
                 break;
         }
 

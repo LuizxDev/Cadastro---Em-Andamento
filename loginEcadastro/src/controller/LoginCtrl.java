@@ -3,6 +3,7 @@ package controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
@@ -85,4 +86,35 @@ public class LoginCtrl {
         return rs;
     }
 
+
+    public void excluirCadastro(int id) throws Exception{
+
+        String sql = "delete from info where id = ?";
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
+        try{
+            conn = ConexaoBd.criarConexaoBd();
+            pstm = conn.prepareStatement(sql);
+
+            pstm.setInt(1, id);
+
+            pstm.execute();
+
+            JOptionPane.showMessageDialog(null, "Seu login foi excluido!");
+
+        }catch(SQLException erro){
+            System.out.println("Erro na classe loginCtrl");
+        }finally{
+            if(pstm != null){
+                pstm.close();
+            }
+            if(conn != null){
+                conn.close();
+            }
+
+        }
+
+    }
 }
